@@ -21,7 +21,6 @@ class AsyncAPI extends Component {
 						throw Error(response.statusText);
 					}
 					const json = await response.json();
-					console.log(json);
 					this.setState({ data: json });
 				} catch (error) {
 			console.error(error);
