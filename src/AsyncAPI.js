@@ -10,19 +10,19 @@ class AsyncAPI extends Component {
 
 	async componentDidMount() {
 		try {
-					const response = await fetch(
-						`https://api.coinmarketcap.com/v1/ticker/?limit=5`
-					);
+			const response = await fetch(
+				`https://api.coinmarketcap.com/v1/ticker/?limit=5`
+			);
 
-          //fetch does not reject the Promise in case of HTTP errors.
-          //You must check the ok property of the response object.
+			//fetch does not reject the Promise in case of HTTP errors.
+			//You must check the ok property of the response object.
 
-					if (!response.ok) {
-						throw Error(response.statusText);
-					}
-					const json = await response.json();
-					this.setState({ data: json });
-				} catch (error) {
+			if (!response.ok) {
+				throw Error(response.statusText);
+			}
+			const json = await response.json();
+			this.setState({ data: json });
+		} catch (error) {
 			console.error(error);
 		}
 	}
